@@ -18,6 +18,24 @@
 .lightbox img{display:block;max-width:94vw;max-height:88vh;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,.5);cursor:zoom-out}
 .lightbox-close{position:absolute;top:22px;right:22px;width:44px;height:44px;border:1px solid rgba(220,180,120,.6);border-radius:50%;background:rgba(20,10,7,.75);color:#f7eee6;font-size:28px;line-height:1;cursor:pointer}
 .lightbox-open{overflow:hidden}
+.flavours{padding:clamp(72px,10vw,150px) clamp(22px,7vw,110px);background:#140a07;color:#f7eee6}
+.flavour-menu{max-width:1180px;margin:55px auto 0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:24px}
+.flavour-group{border:1px solid rgba(213,166,94,.28);background:rgba(255,255,255,.025);padding:clamp(26px,4vw,48px)}
+.flavour-heading{display:flex;align-items:baseline;gap:18px;padding-bottom:20px;margin-bottom:10px;border-bottom:1px solid rgba(213,166,94,.3)}
+.flavour-heading span{font-family:"DM Sans",sans-serif;font-size:11px;letter-spacing:.2em;color:#d6a55f}
+.flavour-heading h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(28px,3vw,42px);font-weight:500;text-transform:none}
+.flavour-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+.flavour-list div{padding:14px 0;border-bottom:1px solid rgba(247,238,230,.1);font-family:"DM Sans",sans-serif;font-size:14px;letter-spacing:.02em;color:rgba(247,238,230,.86)}
+.flavour-list div::after{content:"";float:right;width:22px;margin-top:9px;border-top:1px solid rgba(213,166,94,.5)}
+.flavour-exotic{align-self:start}
+.flavour-exotic .flavour-list{grid-template-columns:1fr}
+@media(max-width:800px){
+  .flavour-menu{grid-template-columns:1fr;margin-top:38px}
+  .flavour-group{padding:24px 20px}
+  .flavour-list{grid-template-columns:1fr}
+  .flavour-heading{gap:12px}
+  .flavour-heading h3{font-size:31px}
+}
 @media(max-width:600px){
   .feature-card:hover img,.store-art:hover img,.opening-image:hover img{transform:none}
   .feature-card img,.store-art img,.opening-image img{cursor:zoom-in}
