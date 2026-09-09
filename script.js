@@ -35,8 +35,17 @@ document.querySelectorAll(".store").forEach((store, index) => {
   whatsapp.href = `https://wa.me/${number}`;
   whatsapp.target = "_blank";
   whatsapp.rel = "noopener";
-  whatsapp.textContent = "WhatsApp ↗";
+  whatsapp.textContent = "WhatsApp →";
   links.appendChild(whatsapp);
 });
+
+// Use clean text arrows instead of emoji-style diagonal arrows on iPhone.
+const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+let node;
+while ((node = walker.nextNode())) {
+  if (node.nodeValue.includes("↗")) {
+    node.nodeValue = node.nodeValue.replaceAll("↗", "→");
+  }
+}
 
 // La Chocolaterie site build refresh — 2026
