@@ -10,6 +10,9 @@
 .phone-icon{font-family:Arial,sans-serif;font-size:15px;margin-right:6px;vertical-align:1px}
 .contact-btn b{display:inline-flex;align-items:center;gap:8px}
 .phone-number{font-family:"DM Sans",sans-serif;font-size:18px;font-weight:600;letter-spacing:.8px;white-space:nowrap}
+.store-hours{margin:10px 0 18px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.78}
+.store-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.store-links .text-button{white-space:nowrap}
 .lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,7,5,.95);backdrop-filter:blur(14px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s ease}
 .lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
 .lightbox img{display:block;max-width:94vw;max-height:88vh;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,.5);cursor:zoom-out}
@@ -23,4 +26,6 @@
   .lightbox-close{top:14px;right:14px;width:40px;height:40px}
   .contact-btn b{font-size:20px}
   .phone-number{font-size:17px;letter-spacing:.5px}
+  .store-hours{font-size:12px;letter-spacing:.06em}
+  .store-links{gap:9px 12px}
 }
