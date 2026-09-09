@@ -48,4 +48,7 @@ while ((node = walker.nextNode())) {
   }
 }
 
+// Remove decorative 01 / 02 / 03 numbering from feature cards and store rows.
+document.querySelectorAll(".feature-meta > span, .store-index").forEach((el) => el.remove());
+
 // La Chocolaterie site build refresh — 2026
