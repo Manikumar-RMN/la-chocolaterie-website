@@ -51,4 +51,54 @@ while ((node = walker.nextNode())) {
 // Remove decorative 01 / 02 / 03 numbering from feature cards and store rows.
 document.querySelectorAll(".feature-meta > span, .store-index").forEach((el) => el.remove());
 
+// Tap/click any gallery image to open a large, mobile-friendly lightbox.
+const galleryImages = document.querySelectorAll(".mini-gallery img");
+if (galleryImages.length) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "image-lightbox";
+  lightbox.setAttribute("aria-hidden", "true");
+  lightbox.innerHTML = `
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img class="lightbox-image" alt="">
+    <div class="lightbox-hint">Tap outside to close</div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector(".lightbox-image");
+  const closeLightbox = () => {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
+  };
+
+  galleryImages.forEach((image) => {
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-label", `View larger image: ${image.alt}`);
+    const openLightbox = () => {
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+    };
+    image.addEventListener("click", openLightbox);
+    image.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox();
+      }
+    });
+  });
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox || event.target.classList.contains("lightbox-close")) {
+      closeLightbox();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
+}
+
 // La Chocolaterie site build refresh — 2026
