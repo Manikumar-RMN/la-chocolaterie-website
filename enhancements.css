@@ -7,8 +7,9 @@
 .store-art:hover img,.opening-image:hover img{transform:scale(1.035)}
 .instagram-label{display:inline-flex!important;align-items:center;gap:10px}
 .instagram-icon{width:20px;height:20px;display:inline-block;flex:0 0 20px}
-.phone-icon{font-family:Arial,sans-serif;font-size:17px;margin-right:5px;vertical-align:1px}
-.contact-btn b{display:inline-flex;align-items:center;gap:5px}
+.phone-icon{font-family:Arial,sans-serif;font-size:15px;margin-right:6px;vertical-align:1px}
+.contact-btn b{display:inline-flex;align-items:center;gap:8px}
+.phone-number{font-family:"DM Sans",sans-serif;font-size:18px;font-weight:600;letter-spacing:.8px;white-space:nowrap}
 .lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,7,5,.95);backdrop-filter:blur(14px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s ease}
 .lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
 .lightbox img{display:block;max-width:94vw;max-height:88vh;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,.5);cursor:zoom-out}
@@ -20,5 +21,6 @@
   .lightbox{padding:14px}
   .lightbox img{max-width:96vw;max-height:82vh}
   .lightbox-close{top:14px;right:14px;width:40px;height:40px}
-  .contact-btn b{font-size:21px}
+  .contact-btn b{font-size:20px}
+  .phone-number{font-size:17px;letter-spacing:.5px}
 }
